@@ -32,7 +32,7 @@ if ( env( 'WP_MAIL_FROM' ) ) {
 
 if ( env( 'WP_MAIL_SMTP_AUTH' ) ) {
 
-    add_action( 'phpmailer_init', function ( PHPMailer $phpmailer ) {
+    add_action( 'phpmailer_init', function ( $phpmailer ) {
         $phpmailer->isSMTP();
         $phpmailer->SMTPAuth   = true;
         $phpmailer->Username   = env( 'WP_MAIL_SMTP_USERNAME' );
